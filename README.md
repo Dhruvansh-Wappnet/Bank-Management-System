@@ -2,6 +2,14 @@
 
 The Bank Management System is a simple web application built using Flask, a micro web framework in Python. It provides basic functionalities for managing bank accounts, transactions, and loans.
 
+# Table of Content
+
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Technologies Used](#technologies-used)
+  - [Contributing](#contributing)
+
 ## Features
 
 1. **Authentication:** Users can log in with their username and password.
@@ -64,22 +72,27 @@ The Bank Management System is a simple web application built using Flask, a micr
 1. **Authentication:**
    - Visit the root URL and log in using the default admin credentials (username: admin, password: admin123).
 
-2. **Navigation:**
-   - Use the navigation menu to access different functionalities.
-
-3. **Perform Actions:**
+2. **Perform Actions:**
    - Create accounts, update details, deposit or withdraw money, grant loans, and more.
 
-4. **Logout:**
+3. **Logout:**
    - Use the "Logout" option to log out of the application.
 
 ## Technologies Used
 
 - Flask
 - HTML/CSS
-- Bootstrap (optional)
+- Python
 
 ## Contributing
 
 Feel free to contribute to the project by opening issues or submitting pull requests.
+
+## Chatgpt Prompts
+
+https://chat.openai.com/share/f78d2856-6dc3-4f2e-9a9d-071efb7f32f4
+
+https://chat.openai.com/share/693d1535-73d4-43a6-b7f1-978fc22d2147
+
+https://chat.openai.com/share/b5ab68c3-f66e-461c-a170-9dfdecc6c93c
 
