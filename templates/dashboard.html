@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Bank Management System - Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ username }}!</h1>
+        <div>
+            <h2>Create Account</h2>
+            <form action="/create_account" method="post">
+                <label for="account_number">Account Number:</label>
+                <input type="text" id="account_number" name="account_number" required>
+                <br>
+                <label for="name">Account Holder's Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <input type="submit" value="Create Account">
+            </form>
+            {% if result_create_account %}
+                <p>{{ result_create_account }}</p>
+            {% endif %}
+        </div>
+        <div>
+            <h2>Deposit</h2>
+            <form action="/deposit" method="post">
+                <label for="deposit_account_number">Account Number:</label>
+                <input type="text" id="deposit_account_number" name="account_number" required>
+                <br>
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" required>
+                <br>
+                <input type="submit" value="Deposit">
+            </form>
+            {% if result_deposit %}
+                <p>{{ result_deposit }}</p>
+            {% endif %}
+        </div>
+        <div>
+            <h2>Withdraw</h2>
+            <form action="/withdraw" method="post">
+                <label for="withdraw_account_number">Account Number:</label>
+                <input type="text" id="withdraw_account_number" name="account_number" required>
+                <br>
+                <label for="withdraw_amount">Amount:</label>
+                <input type="text" id="withdraw_amount" name="amount" required>
+                <br>
+                <input type="submit" value="Withdraw">
+            </form>
+            {% if result_withdraw %}
+                <p>{{ result_withdraw }}</p>
+            {% endif %}
+        </div>
+        <div>
+            <h2>Update Account</h2>
+            <form action="/update_account" method="post">
+                <label for="update_account_number">Account Number:</label>
+                <input type="text" id="update_account_number" name="account_number" required>
+                <br>
+                <label for="update_name">New Account Holder's Name:</label>
+                <input type="text" id="update_name" name="name" required>
+                <br>
+                <label for="update_balance">New Balance:</label>
+                <input type="text" id="update_balance" name="balance" required>
+                <br>
+                <input type="submit" value="Update Account">
+            </form>
+            {% if result_update_account %}
+                <p>{{ result_update_account }}</p>
+            {% endif %}
+        </div>
+        
+        <div>
+            <h2>Close Account</h2>
+            <form action="/close_account" method="post">
+                <label for="close_account_number">Account Number:</label>
+                <input type="text" id="close_account_number" name="account_number" required>
+                <br>
+                <input type="submit" value="Close Account">
+            </form>
+            {% if result_close_account %}
+                <p>{{ result_close_account }}</p>
+            {% endif %}
+        </div>
+        <div>
+            <h2>Display All Accounts</h2>
+            <form action="/display_account_details" method="post">
+                <label for="account_number">Account Number:</label>
+                <input type="text" id="account_number" name="account_number" required>
+                <br>
+                <input type="submit" value="Display Account Details">
+            </form>
+            {% if account_details %}
+                <p>All Accounts: {{ account_details }}</p>
+            {% endif %}
+        </div>
+        <div>
+            <h2>Transaction History</h2>
+            <form action="/transaction_history" method="post">
+                <label for="history_account_number">Account Number:</label>
+                <input type="text" id="history_account_number" name="account_number" required>
+                <br>
+                <input type="submit" value="View Transaction History">
+            </form>
+            {% if transaction_history %}
+                <p>Transaction History: {{ transaction_history }}</p>
+            {% endif %}
+        </div>
+        
+        <div>
+            <h2>Grant Loan</h2>
+            <form action="/grant_loan" method="post">
+                <label for="loan_account_number">Account Number:</label>
+                <input type="text" id="loan_account_number" name="account_number" required>
+                <br>
+                <label for="loan_amount">Loan Amount:</label>
+                <input type="text" id="loan_amount" name="loan_amount" required>
+                <br>
+                <input type="submit" value="Grant Loan">
+            </form>
+            {% if result_grant_loan %}
+                <p>{{ result_grant_loan }}</p>
+            {% endif %}
+        </div>
+        
+        <div>
+            <h2>Repay Loan</h2>
+            <form action="/repay_loan" method="post">
+                <label for="repay_account_number">Account Number:</label>
+                <input type="text" id="repay_account_number" name="account_number" required>
+                <br>
+                <label for="repayment_amount">Repayment Amount:</label>
+                <input type="text" id="repayment_amount" name="repayment_amount" required>
+                <br>
+                <input type="submit" value="Repay Loan">
+            </form>
+            {% if result_repay_loan %}
+                <p>{{ result_repay_loan }}</p>
+            {% endif %}
+        </div>
+        
+        <div>
+            <h2>Loan Details</h2>
+            <form action="/loan_details" method="post">
+                <label for="loan_details_account_number">Account Number:</label>
+                <input type="text" id="loan_details_account_number" name="account_number" required>
+                <br>
+                <input type="submit" value="View Loan Details">
+            </form>
+            {% if loan_details %}
+                <p>Loan Details: {{ loan_details }}</p>
+            {% endif %}
+        </div>
+        <div>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

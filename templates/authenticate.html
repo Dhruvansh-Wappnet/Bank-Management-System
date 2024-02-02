@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Bank Management System - Authenticate</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Bank Management System</h1>
+        <div>
+            <h2>Register</h2>
+            <form action="/signup" method="post">
+                <label for="signup_username">Username:</label>
+                <input type="text" id="signup_username" name="signup_username" required>
+                <br>
+                <label for="signup_password">Password:</label>
+                <input type="password" id="signup_password" name="signup_password" required>
+                <br>
+                <input type="submit" value="Sign Up">
+            </form>
+            {% if signup_error %}
+                <p>{{ signup_error }}</p>
+            {% endif %}
+        </div>
+        <div class="form-container">
+            <h2>Login</h2>
+            <form action="/authenticate" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <input type="submit" value="Authenticate">
+            </form>
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
